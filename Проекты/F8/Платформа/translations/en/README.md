@@ -2,7 +2,7 @@
 
 The English branch is in **private editorial development** and is not yet a public translation release.
 
-Current private working status: **EN-TEXT 0.3** from canonical Russian **RU-TEXT 1.0.2**.
+Current private working status: **EN-TEXT 0.4 cadence candidate** from canonical Russian **RU-TEXT 1.0.2**.
 
 Public release policy:
 - the Russian original remains the canonical AI-readable source;
@@ -19,4 +19,4 @@ Planned English visual localization:
 
 Common narrative images `fig01`–`fig06` are shared with the Russian edition unless a language-specific replacement is explicitly approved.
 
-Next gate: EN-TEXT read-aloud/cadence pass → text lock → English panels/drop caps → A5 layout.
+Next gate: final human read-through of EN-TEXT 0.4 → EN-TEXT 1.0 lock → English panels/drop caps → A5 layout.

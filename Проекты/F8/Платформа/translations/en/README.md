@@ -1,21 +1,22 @@
 # English edition
 
-Status: **private translation work in progress**.
+The English branch is in **private editorial development** and is not yet a public translation release.
 
-- Canonical source: `RU-TEXT 1.0.2`.
-- Current private working pass: `EN-TEXT 0.2` (kept on the private Google Drive, not published here).
-- The earlier English edition is used only as a terminology mirror, never as the source text.
-- Canonical AI-reading source remains the Russian original; a separate AI-only English translation is not required.
+Current private working status: **EN-TEXT 0.3** from canonical Russian **RU-TEXT 1.0.2**.
 
-## Visual localization plan
+Public release policy:
+- the Russian original remains the canonical AI-readable source;
+- the English edition is a full literary translation for readers, not a shortened adaptation;
+- working translation drafts remain private on Google Drive until editorial lock;
+- public GitHub receives only approved release material.
 
-The six common scene illustrations remain language-independent:
-`fig01_platforma_nad_okeanom.jpg` … `fig06_final_platformy.jpg/png`.
-
-The English edition receives its own localized chapter panels and drop caps:
+Planned English visual localization:
 - `panel00_birth.jpg` + `dropcap00_i.jpg`
 - `panel01_memories.jpg` + `dropcap01_w.jpg`
 - `panel02_testing.jpg` + `dropcap02_i.jpg`
 - `panel03_dawn.jpg` + `dropcap03_t.jpg`
+- `cover_en_front_v1.png`
 
-The chapter number and position in the visual rhythm must remain identical to the Russian edition; only the language-dependent title and initial change.
+Common narrative images `fig01`–`fig06` are shared with the Russian edition unless a language-specific replacement is explicitly approved.
+
+Next gate: EN-TEXT read-aloud/cadence pass → text lock → English panels/drop caps → A5 layout.

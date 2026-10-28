@@ -1,0 +1,32 @@
+name: F8 Platform localized official images import
+
+on:
+  push:
+    paths:
+      - ".github/workflows/f8-platform-images-import.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  import-images:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Download reviewed image payload
+        run: |
+          curl -fL --retry 3 'https://sdmntprcentralus.oaiusercontent.com/files/00000000-a458-81f5-80dc-dd1b998b03c1/raw?se=2026-10-28T09%3A39%3A40Z&sp=r&sv=2026-02-06&sr=b&scid=80965523-65a8-556f-9350-dd3f51f7c554&skoid=de71a0d5-fb02-4fce-be69-9296aced242b&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-10-27T13%3A27%3A10Z&ske=2026-10-28T13%3A27%3A10Z&sks=b&skv=2026-02-06&sig=Y2VuYYYGC444OvKrjO7HhWCxPt2uQG5ivWYMCVEwFtk%3D' -o /tmp/f8-images.zip
+          unzip -q -o /tmp/f8-images.zip -d 'Проекты/F8/Платформа/images/official'
+      - name: Commit localized official images
+        run: |
+          git config user.name "F8 release automation"
+          git config user.email "actions@users.noreply.github.com"
+          git add 'Проекты/F8/Платформа/images/official'
+          if git diff --cached --quiet; then
+            echo "No image changes to commit."
+          else
+            git commit -m "F8.0 Platform: publish localized official chapter art and drop caps"
+            git push
+          fi

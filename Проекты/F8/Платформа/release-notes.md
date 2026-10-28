@@ -1,5 +1,18 @@
 # Release notes
 
+## F8.0 · Multilingual TEXT 1.0 — 28 October 2026 · 57 I.E.
+
+- Public literary texts released: **EN / UK / ES / FR / DE / IT / JA / ZH**.
+- Every translation was produced directly from canonical Russian **RU-TEXT 1.0.2** and reached its language-specific text lock.
+- Cross-check of the A5 PUB RC1 PDFs against the locked source texts found no large missing narrative blocks; source-text coverage after normalization is approximately 99.7–99.98% across the set.
+- German is **not shorter** in the current A5 candidate: DE has 51 pages, the longest localized A5 interior in the current package.
+- A layout defect was nevertheless found in the multilingual A5 branch: the small V60 illustration/text-flow construction can continue as a narrow right-hand text column onto following pages. It is visible most strongly in EN/UK/ES/FR/DE/IT. JA/ZH are less affected because the localized text fits more compactly.
+- Therefore the **TEXT 1.0 web release is public**, while localized A5 PDFs remain unpublished release candidates until the V60 flow is repaired and proofed.
+- Russian original remains public in `text/platforma_ru_for_ai_v1.0.md`.
+- License: CC BY 4.0, attribution to Yasim 0_t.
+
+# Release notes
+
 ## F8.0 · RU-PUB RC3 — 25 October 2026 · 57 I.E.
 
 - **RU-TEXT 1.0.2** remains the literary-text version.

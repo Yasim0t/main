@@ -6,61 +6,70 @@ This directory defines the digital-publication branch of **F8.0 — Platform**.
 
 The preferred ebook format is a **reflowable EPUB** rather than a fixed-layout copy of the A5 print edition.
 
-Production target for the first stable release: **EPUB 3.3**. EPUB 3.4 is monitored as the next-generation specification but remains a Candidate Recommendation as of 28 October 2026.
+Production target for the first stable release: **EPUB 3.3**, the current W3C Recommendation line. EPUB 3.4 is monitored as the next-generation specification but remains on the Candidate Recommendation track as of 28 October 2026.
 
 Official references:
 - https://www.w3.org/TR/epub-33/
 - https://www.w3.org/TR/epub-a11y-11/
 - https://www.w3.org/TR/epub-34/
+- https://github.com/w3c/epubcheck
 
 ## Why the digital line is separate
 
 The A5 branch is typography for paper. It contains physical page geometry, recto/verso logic, fixed drop-cap slots, page numbers and image-flow decisions.
 
-The EPUB branch must instead preserve:
+The EPUB branch instead preserves:
 - semantic chapter structure;
 - reflowable prose;
 - user-selectable type size and reading-system pagination;
 - language metadata;
 - accessible navigation;
-- alt text / descriptions for narrative images;
-- CSS drop caps that degrade gracefully;
+- image resources independent of print-page coordinates;
 - no dependency on A5 page numbers;
 - no narrow-column V60 construction inherited from print.
 
-## Proposed package
+## RC1 builds prepared — 28 October 2026
 
-Each language edition should contain:
-1. title and rights metadata;
-2. the four chapters as semantic XHTML sections;
-3. navigation / table of contents;
-4. common narrative figures `fig01`–`fig06`;
-5. localized chapter art where approved;
-6. accessible text alternatives for meaningful images;
-7. lightweight CSS;
-8. no private production notes, Drive links or QA internals.
+Nine private release-candidate binaries now exist:
+
+RU · EN · UK · ES · FR · DE · IT · JA · ZH
+
+Naming pattern: `Platform_<LANG>_EPUB3.3_RC1.epub`.
+
+They are **release candidates, not public binary releases yet**. The working RC1 package is retained in the private production archive while the public GitHub repository keeps the source texts, visual assets and digital specification.
+
+### Completed internal QA
+
+All nine candidates have been checked for:
+- valid ZIP/container structure;
+- uncompressed first `mimetype` entry with `application/epub+zip`;
+- resolvable `META-INF/container.xml`;
+- EPUB 3 package metadata and navigation;
+- presence of every manifest resource;
+- chapter ordering;
+- source-to-EPUB beginning/end text anchors;
+- no dependency on the A5 V60 table/column construction.
+
+The multilingual A5 V60 defect therefore does **not** propagate into the EPUB line.
 
 ## Source of truth
 
 Text sources:
-- Russian: public RU-TEXT / AI-readable source.
+- Russian: RU-TEXT 1.0.2 / RU-PUB RC3 textual content, with print-only structures flattened into reading order.
 - EN / UK / ES / FR / DE / IT / JA / ZH: public locked TEXT 1.0 files under `../translations/`.
 
 Print-layout PDFs are **not** ebook source files.
 
-## Gate before publishing .epub
+## Remaining gate before public .epub release
 
-A generated EPUB is not considered a release merely because it opens.
+A generated EPUB is not considered released merely because its container is structurally sound.
 
-Required checks:
-- EPUB validation;
-- navigation and metadata;
-- chapter order;
-- image presence and alt text;
-- reflow at small/large font sizes;
-- dark/light reading themes where supported;
-- at least two independent reading systems;
-- spot-check against the locked TEXT source;
-- accessibility metadata.
+Still required:
+1. official EPUBCheck pass;
+2. at least two independent reading systems;
+3. small/large-font reflow and navigation checks;
+4. accessibility metadata and meaningful-image alternative-text review;
+5. final cover policy for every language;
+6. final human spot-read against the locked TEXT source.
 
-Status: **digital specification v0.1 — no EPUB release yet**.
+Status: **EPUB 3.3 RC1 prepared; public binary release pending external/device QA**.
